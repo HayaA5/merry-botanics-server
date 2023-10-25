@@ -1,12 +1,9 @@
 const mongoose = require('mongoose');
 const {SchemaTypes} = mongoose
-// require('./user')
-// require('./item')
-// require('./order')
 
 const orderSchema = new mongoose.Schema({
     receiptNumber:{
-        type:Number,
+        type:String,
         required:true,
         unique:true
         
@@ -31,7 +28,6 @@ const orderSchema = new mongoose.Schema({
 
 
 })
-
 
 const orderModel = mongoose.model('order', orderSchema);
 module.exports =  orderModel 

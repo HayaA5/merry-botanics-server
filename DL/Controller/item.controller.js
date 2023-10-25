@@ -8,10 +8,7 @@ async function read(filter = {}){
 return await itemModel.find(filter)
 }
 async function readOne(filter = {}){
-    const x=await itemModel.findOne(filter) //findOne
-    console.log('x',x)
-    return x
-//return await itemModel.findOne(filter)
+return await itemModel.findOne(filter)
 }
 async function update(filter,data){
 return await itemModel.updateOne(filter,data, { runValidators: true })

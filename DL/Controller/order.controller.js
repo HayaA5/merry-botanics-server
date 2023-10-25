@@ -1,12 +1,6 @@
-
-
-//const { userModel } = require('../models/user')
-//const userModel = require("../Model/user.model");
 const orderModel=require("../Model/order.model")
 
 async function create(data) {
-    console.log('order controller')
-    console.log(data)
     return await orderModel.create(data);
 }
 async function read(filter, proj) {

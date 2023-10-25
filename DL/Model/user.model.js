@@ -14,16 +14,6 @@ const userSchema = new mongoose.Schema({
     required: true,
     select: false,
   },
-//   salt:{
-//     type: String,
-//     required: true,
-//     select: false
-// },
-// hashedPassword:{
-// type: String,
-// required: true,
-// select: false
-// },
   createdDate: {
     type: Date,
     default: new Date(),
