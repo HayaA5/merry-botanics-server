@@ -34,7 +34,13 @@ const router=require('./Routes');
 app.use(express.json()) 
 app.use(require('cors')())
 
-
+//
+const corsOptions = {
+    origin: ["https://merry-botanics-0428204315fa.herokuapp.com/"],
+    preflightContinue:false,
+    credentials: true
+  }
+  //
 app.use("/api", router); //IS EQUIVALENT TO app.use("/api", require('./Routes'));
 
 
