@@ -40,6 +40,7 @@ const corsOptions = {
     preflightContinue:false,
     credentials: true
   }
+  app.use(cors(corsOptions));
   //
 app.use("/api", router); //IS EQUIVALENT TO app.use("/api", require('./Routes'));
 
