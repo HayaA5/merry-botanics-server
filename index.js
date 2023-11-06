@@ -37,7 +37,7 @@ app.use(require('cors')())
 //
 const corsOptions = {
     origin: ["https://merry-botanics-0428204315fa.herokuapp.com/"],
-    preflightContinue:false,
+    preflightContinue:true,
     credentials: true
   }
   app.use(cors(corsOptions));
