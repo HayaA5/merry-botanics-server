@@ -9,7 +9,7 @@ let transporter= nodemailer.createTransport({
     }
 })
 
-//need email address, title=title of the email, html=component with all data end css ,text=text or html
+//needs email address, title=title of the email, html=component with all data end css ,text=text or html
 async function sendEmail({email,title,html,text}){
     const mailOptions={
         from:"Merry Botanics 1",//we don't see it

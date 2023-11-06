@@ -36,7 +36,7 @@ async function updateItem (barcode,data){
   return updatedItem
 }
 
-async function addItem (data){//error code to update? cf in google+ add other required fields==>each one 1 if
+async function addItem (data){
   let item = await getItemByBarcode(data.barcode)
   let itemByName=await getItemByName(data.name)
 

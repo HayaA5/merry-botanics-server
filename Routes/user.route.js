@@ -41,27 +41,4 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// router.put("/changepassword",
-//    async (req, res) => {
-//      try {
-//       // const result = await userServices.createTokenForPasswordReset(req.body);
-//        const result = await userServices.resetPassword(req.body);
-//        res.send(result);
-//      } catch (error) {
-//        res.status(error.code).send(error.msg);
-//      }
-//    }
-//  );
-
-// router.post(
-//   "/detectingpasswordchange", auth.verifyTokenForPasswordChange,
-//   async (req, res) => {
-//     try {
-//       const result = await userServices.getPasswordVerification(req.body)
-//       res.send(result);
-//     } catch (error) {
-//       res.status(error.code).send(error.msg);
-//     }
-//   })
-
 module.exports = router;

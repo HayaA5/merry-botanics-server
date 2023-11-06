@@ -24,7 +24,6 @@ const register = async (data) => {
     const user=await userController.create({fullName:data.fullName, email:data.email, password:hashedPassword});
     const token =await auth.createLoginToken(user._id)
      return {code:200, message:token}
-   // return "The user has been registered successfully";
   } catch (error) {
     throw { code: 401, msg: "Internal server error" };
   }
@@ -46,49 +45,5 @@ const login = async (data) => {
   }
 };
 
-// const createTokenForPasswordReset = async (data) => {
-//   try {
-//     const user = await userController.readOne({ email: data.email });
-//     if (!user) throw { code: 401, msg: "user not found" };
-//     const token = await auth.createTokenForPasswordChange({ email: user.email, id: user._id, });
-    
-//    // return token;
-//     // const result = await sendOrderEmail(
-//     //   user.email,
-//     //   "Change password",
-//     //   data.html(data.token)
-//     // );
-//     // return "The email was sent successfully";
-//   } catch (error) {
-//     throw { code: 401, msg: "Internal server error" };
-//   }
-// };
-
-// const resetPassword=async (data)=>{
-//   const user = await userController.readOne({ email: data.email });
-//   if (!user) throw { code: 401, msg: "user not found" };
-//   const token = await auth.createTokenForPasswordChange({ email: user.email, id: user._id, });
-//   const hashedPassword=await bcrypt.hash("0000", SALT_ROUNDS);
-//   await userController.update({email:data.email},{password:hashedPassword})
-//   return token
-// }
-
-
-
-
-// const getPasswordVerification = async (data) => {
-//   try {
-//     data.passwordVerification = bcrypt.hashSync(data.password, SALT_ROUNDS);
-//     if (data.password !== data.passwordVerification) throw {
-//       msg: 'Password not the same as the password verification', code: 401
-//     };
-//     console.log('------', data)
-//     await userController.update({ email: data.email }, { password: data.password });
-//     return "Password changed successfully";
-//   } catch (error) {
-//     throw { code: 401, msg: "Internal server error" };
-//   }
-// }
-//getPasswordVerification({email:"aminovhaya@gmail.com", password:"xxx"})
 module.exports = { register, login, getUser, getAllUsers};
 

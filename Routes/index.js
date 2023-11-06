@@ -1,7 +1,3 @@
-// module.exports=(req,res)=>{
-//     res.send("bdcfj");
-// };
-
 const express = require("express");
 const router=express.Router();
 
