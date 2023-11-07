@@ -6,33 +6,33 @@ const express = require('express'),
     const cors = require("cors");
 
 //Cors Configuration - Start
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*")
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested, Content-Type, Accept Authorization"
-//   )
-//   if (req.method === "OPTIONS") {
-//     res.header(
-//       "Access-Control-Allow-Methods",
-//       "POST, PUT, PATCH, GET, DELETE"
-//     )
-//     return res.status(200).json({})
-//   }
-//   next()
-// })
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested, Content-Type, Accept Authorization"
+  )
+  if (req.method === "OPTIONS") {
+    res.header(
+      "Access-Control-Allow-Methods",
+      "POST, PUT, PATCH, GET, DELETE"
+    )
+    return res.status(200).json({})
+  }
+  next()
+})
 //Cors Configuration - End
 
-app.use((req, res, next) => {
-    req.headers.authorization("Access-Control?-Allow-Origin", "*")
-    // req.header("Access-Control-Allow-Origin","*")
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-  });
+// app.use((req, res, next) => {
+//     req.headers.authorization("Access-Control?-Allow-Origin", "*")
+//     // req.header("Access-Control-Allow-Origin","*")
+//     res.setHeader("Access-Control-Allow-Origin", "*");
+//     res.header(
+//       "Access-Control-Allow-Headers",
+//       "Origin, X-Requested-With, Content-Type, Accept"
+//     );
+//     next();
+//   });
 
 
  const   port = process.env.PORT||3005;
