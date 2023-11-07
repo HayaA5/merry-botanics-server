@@ -23,6 +23,14 @@ const express = require('express'),
 // })
 //Cors Configuration - End
 
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
 
 
  const   port = process.env.PORT||3005;
@@ -45,27 +53,27 @@ app.use(express.json())
 app.use("/api", router); //IS EQUIVALENT TO app.use("/api", require('./Routes'));
 
 
-const corsOptions = {
-    origin:  ["https://merry-botanics-0428204315fa.herokuapp.com/"], //[`${process.env.CLIENT_URL}`],
-    methods: "GET,HEAD,PUT,OPTIONS,POST,DELETE",
-    allowedHeaders: [
-      "Access-Control-Allow-Headers",
-      "Origin",
-      "X-Requested-With",
-      "Content-Type",
-      "Accept",
-      "Authorization",
-      "token",
-      "Access-Control-Request-Method",
-      "Access-Control-Request-Headers",
-      "Access-Control-Allow-Credentials",
-      "Access-Control-Allow-Origin",
-    ],
-    credentials: true,
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-  };
-  app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin:  ["https://merry-botanics-0428204315fa.herokuapp.com/"], //[`${process.env.CLIENT_URL}`],
+//     methods: "GET,HEAD,PUT,OPTIONS,POST,DELETE",
+//     allowedHeaders: [
+//       "Access-Control-Allow-Headers",
+//       "Origin",
+//       "X-Requested-With",
+//       "Content-Type",
+//       "Accept",
+//       "Authorization",
+//       "token",
+//       "Access-Control-Request-Method",
+//       "Access-Control-Request-Headers",
+//       "Access-Control-Allow-Credentials",
+//       "Access-Control-Allow-Origin",
+//     ],
+//     credentials: true,
+//     preflightContinue: false,
+//     optionsSuccessStatus: 204,
+//   };
+//   app.use(cors(corsOptions));
 
 
 app.listen(port, () => console.log(`server is running => ${port}`))
