@@ -32,7 +32,7 @@ const router=require('./Routes');
 
 
 app.use(express.json()) 
-app.use(require('cors')())
+// app.use(require('cors')())
 
 //
 // const corsOptions = {
