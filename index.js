@@ -32,7 +32,7 @@ const router=require('./Routes');
 
 
 app.use(express.json()) 
-// app.use(require('cors')())
+ app.use(require('cors')())
 
 //
 // const corsOptions = {
@@ -45,26 +45,26 @@ app.use(express.json())
 app.use("/api", router); //IS EQUIVALENT TO app.use("/api", require('./Routes'));
 
 //
-const corsOptions = {
-    origin: [`${process.env.CLIENT_URL}`],
-    methods: "GET,HEAD,PUT,OPTIONS,POST,DELETE",
-    allowedHeaders: [
-      "Access-Control-Allow-Headers",
-      "Origin",
-      "X-Requested-With",
-      "Content-Type",
-      "Accept",
-      "Authorization",
-      "token",
-      "Access-Control-Request-Method",
-      "Access-Control-Request-Headers",
-      "Access-Control-Allow-Credentials",
-    ],
-    credentials: true,
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-  };
-  app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: [`${process.env.CLIENT_URL}`],
+//     methods: "GET,HEAD,PUT,OPTIONS,POST,DELETE",
+//     allowedHeaders: [
+//       "Access-Control-Allow-Headers",
+//       "Origin",
+//       "X-Requested-With",
+//       "Content-Type",
+//       "Accept",
+//       "Authorization",
+//       "token",
+//       "Access-Control-Request-Method",
+//       "Access-Control-Request-Headers",
+//       "Access-Control-Allow-Credentials",
+//     ],
+//     credentials: true,
+//     preflightContinue: false,
+//     optionsSuccessStatus: 204,
+//   };
+//   app.use(cors(corsOptions));
 //
 
 app.listen(port, () => console.log(`server is running => ${port}`))
