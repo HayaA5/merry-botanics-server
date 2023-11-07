@@ -24,6 +24,8 @@ const express = require('express'),
 //Cors Configuration - End
 
 app.use((req, res, next) => {
+    req.headers.authorization("Access-Control?-Allow-Origin", "*")
+    req.header("Access-Control-Allow-Origin","*")
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.header(
       "Access-Control-Allow-Headers",
