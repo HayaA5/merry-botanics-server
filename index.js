@@ -46,7 +46,7 @@ app.use("/api", router); //IS EQUIVALENT TO app.use("/api", require('./Routes'))
 
 
 const corsOptions = {
-    origin: [`${process.env.CLIENT_URL}`],
+    origin:  ["https://merry-botanics-0428204315fa.herokuapp.com/"], //[`${process.env.CLIENT_URL}`],
     methods: "GET,HEAD,PUT,OPTIONS,POST,DELETE",
     allowedHeaders: [
       "Access-Control-Allow-Headers",
