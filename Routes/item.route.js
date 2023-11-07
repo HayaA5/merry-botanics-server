@@ -4,6 +4,8 @@ const itemServices = require ('../BL/item.service')
 
 router.get ("/allitems", async (req,res)=>{
     try{
+         req.header("Access-Control-Allow-Origin","*")
+    res.setHeader("Access-Control-Allow-Origin", "*");
         const item = await itemServices.getAllItems()
         res.send (item)
     }
