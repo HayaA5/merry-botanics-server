@@ -5,8 +5,6 @@ const createToken = (data, secretName, expireTime) => {//data=_id
 };
 
 const verify = (req, res, secretName) => {//add next in arguments?
-
-
     const authHeader = req.headers.authorization;
     if (authHeader) {
         const token = authHeader.split(" ")[1];
@@ -20,30 +18,15 @@ const verify = (req, res, secretName) => {//add next in arguments?
     } else {
         res.sendStatus(401);
     }
-
 }
-
-
 
 const createLoginToken = async (data) => {
     return createToken(data, process.env.LOGIN_SECRET, "2M");
 };
+
 const verifyLoginToken = async (req, res, next) => {
   verify(req, res, process.env.LOGIN_SECRET);
   next();
 };
 
-
-const createTokenForPasswordChange = async (data) => {
-  return createToken(data, process.env.PASSWORD_VERIFICATION, "15m");
-};
-// const verifyTokenForPasswordChange = async (req, res, next) => {
-//   req.body.email = verify(req, res, process.env.PASSWORD_VERIFICATION).email
-//   next();
-// };
-module.exports = {
-  createLoginToken,
-  verifyLoginToken,
-  createTokenForPasswordChange,
-  //verifyTokenForPasswordChange,
-};
+module.exports = {createLoginToken,verifyLoginToken};

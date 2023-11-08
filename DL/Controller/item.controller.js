@@ -1,6 +1,5 @@
 const itemModel = require ('../Model/item.model')
 
-
 async function create(data){
 return await itemModel.create(data)
 }
@@ -15,7 +14,6 @@ return await itemModel.updateOne(filter,data, { runValidators: true })
 }
 async function del(filter){
     return await itemModel.updateOne( {_id:filter},{isActive:false})
-
 }
 
 module.exports={create,read,readOne,update,del}

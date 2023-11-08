@@ -52,7 +52,6 @@ if(cart.length==0){
 }
 }
 
-
 async function getOrdersByUser(data){
     const user = await userController.readOne({ email:data.email});
     if(!user) throw {code:400, message:"this user doesn't exist"}
