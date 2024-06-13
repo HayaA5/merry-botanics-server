@@ -1,4 +1,4 @@
-import serverless from "serverless-http";
+// import serverless from "serverless-http";
 // import express, { Router } from "express";
 
 require("dotenv").config()
@@ -15,4 +15,4 @@ app.use("/api", router); //app.use("/api", require('./Routes'));
 app.listen(port, () => console.log(`server is running => ${port}`))
 
 
-export const handler = serverless(app);
+// export const handler = serverless(app);
