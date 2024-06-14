@@ -16,14 +16,7 @@ async function sendEmail({ email, title, html, text }) {
         to: email,
         subject: title,
         html: html,
-        text: text,
-        attachments: [{
-            filename: 'photo.JPG',
-            // content: fs.createReadStream('C:\Users\USER\Desktop\react\merry-botanics\merry-botanics-server\BL\photo.JPG')
-            // content: './photo.JPG'
-            streamSource: fs.createReadStream('C:\Users\USER\Desktop\react\merry-botanics\merry-botanics-server\BL\photo.JPG')
-            // cid: 'myImg'
-        }]
+        text: text
     }
 
     // -----------------
