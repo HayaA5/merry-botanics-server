@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
-	
+
 const itemSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique:true        
+        unique: true
     },
     price: {
         type: Number,
@@ -15,32 +15,36 @@ const itemSchema = new mongoose.Schema({
         required: true
     },
     stock: {
-        type : Number,
-        default : 0
+        type: Number,
+        default: 0
     },
     barcode: {
-        type:String,
-        required:true,
+        type: String,
+        required: true,
         unique: true
     },
-    light:{
-        type:Number,
-        enum : [1,2,3],
-        required:true
+    light: {
+        type: Number,
+        enum: [1, 2, 3],
+        required: true
     },
-    water:{
-        type:Number,
-        enum : [1,2,3],
-        required:true
+    water: {
+        type: Number,
+        enum: [1, 2, 3],
+        required: true
     },
-    category:{
-        type:String,
-        enum:['classic', 'outdoor', 'perennial plant'],
-        required:true
+    category: {
+        type: String,
+        enum: ['classic', 'outdoor', 'perennial plant'],
+        required: true
     },
-    isActive:{
-        type:Boolean,
-        default:true
+    isActive: {
+        type: Boolean,
+        default: true
+    },
+    description: {
+        type: String
+        // default: ''
     }
 })
 

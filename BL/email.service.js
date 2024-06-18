@@ -16,7 +16,15 @@ async function sendEmail({ email, title, html, text }) {
         to: email,
         subject: title,
         html: html,
-        text: text
+        text: text,
+        attachments: [{ filename: "logo.png", path: "./attachments/logo.png" }]
+        // attachments: [{
+        //     filename: 'photo.JPG',
+        //     // content: fs.createReadStream('C:\Users\USER\Desktop\react\merry-botanics\merry-botanics-server\BL\photo.JPG')
+        //     // content: './photo.JPG'
+        //     streamSource: fs.createReadStream('C:\Users\USER\Desktop\react\merry-botanics\merry-botanics-server\BL\photo.JPG')
+        //     // cid: 'myImg'
+        // }]
     }
 
     // -----------------
